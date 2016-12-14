@@ -1,0 +1,19 @@
+
+<p>Edit Profile</p>
+
+<form action='/users/<%=@user.id%>' method='post'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="hidden" name="_method" value="patch">
+	<label>Email <input type="text" name="user[email]" value="<%=@user.email%>"></label><br>
+	<label>Name <input type="text" name="user[name]" value="<%=@user.name%>"></label><br>
+	<label>Password<input type="password" name="user[password]" value="<%=@user.password%>"></label><br>
+	<label>Password Confirmation<input type="password" name="user[password_confirmation]" value="<%=@user.password_confirmation%> "></label><br>
+	<input type="submit" value="Update">
+</form>
+
+<form action='/users/<%=@user.id%>' method='post'>
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Account">
+	
+</form>
